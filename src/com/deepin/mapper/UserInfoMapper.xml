@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper中定义的是mybatis对某些业务的sql语句 -->
+<mapper namespace="com.deepin.mapper.UserInfoMapper">
+	<!-- 登录 -->
+	<select id="login" parameterType="com.deepin.model.UserInfo" resultType="com.deepin.model.UserInfo">
+		select * from UserInfo where userName=#{userName} and userPwd=#{userPwd}
+	</select>
+</mapper>

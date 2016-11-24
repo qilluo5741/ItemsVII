@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper中定义的是mybatis对某些业务的sql语句 -->
+<mapper namespace="com.deepin.mapper.goodsinfoMapper">
+<insert id="insertgoodsinfo" parameterType="com.deepin.model.goodsinfo">
+		insert into goodsinfo values(#{goodsId},#{goodsName},#{goodsNum},#{goodsInPrice},#{goodsOutPrice},#{goodsDiscount},#{goodsRemark},#{enterTime})
+	</insert>
+	<update id="updategoodsinfo" parameterType="com.deepin.model.goodsinfo">
+		update goodsinfo set goodsName=#{goodsName},goodsNum=#{goodsNum},goodsInPrice=#{goodsInPrice},goodsOutPrice=#{goodsOutPrice},goodsDiscount=#{goodsDiscount},goodsRemark=#{goodsRemark},enterTime=#{enterTime} where goodsId = #{goodsId}
+	</update>
+	<select id="getgoodsinfo"  resultType="com.deepin.model.goodsinfo">
+		select * from goodsinfo
+	</select>
+	<!-- 分页集合查询 -->
+	<select id="pagerGoodbyList" parameterType="hashmap" resultType="com.deepin.model.goodsinfo">
+		select * from goodsinfo LIMIT #{pageBegin},#{pageSize}
+	</select>
+	<!-- 分页集合总条数查询 -->
+	<select id="pagerGoodbyCount" resultType="int">
+		select count(1) from goodsinfo
+	</select>
+</mapper>

@@ -1,0 +1,38 @@
+body {
+	font: 90%/160% Arial, Helvetica, sans-serif;
+	color: #eee;
+	width: auto;
+	max-width: auto;
+	margin: 0 auto;
+	background: rgba(0,0,0,0.2);
+	background-image: url(image/huabian.png);
+}
+/* nav */
+.nav {
+	position: relative;
+	margin: 20px 0;
+}
+.nav ul {
+	margin: 0;
+	padding: 0;
+}
+.nav li {
+	margin: 0 5px 10px 0;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+}
+.nav a {
+	padding: 3px 12px;
+	text-decoration: none;
+	color: #999;
+	line-height: inherit;
+}
+.nav a:hover {
+	color: #d0d0d0;
+}
+.nav .current a {
+	background: #999;
+	color: #fff;
+	border-radius: 5px;
+}
